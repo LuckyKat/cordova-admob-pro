@@ -1,0 +1,95 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish', '.' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.1
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/liming/workspace/cordova-plugins/admobpro',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/liming/.npm/cordova-plugin-admob/2.9.9/package.tgz not in flight; packing
+9 verbose tar pack [ '/Users/liming/.npm/cordova-plugin-admob/2.9.9/package.tgz',
+9 verbose tar pack   '/Users/liming/workspace/cordova-plugins/admobpro' ]
+10 verbose tarball /Users/liming/.npm/cordova-plugin-admob/2.9.9/package.tgz
+11 verbose folder /Users/liming/workspace/cordova-plugins/admobpro
+12 info prepublish cordova-plugin-admob@2.9.9
+13 verbose addLocalTarball adding from inside cache /Users/liming/.npm/cordova-plugin-admob/2.9.9/package.tgz
+14 silly cache afterAdd cordova-plugin-admob@2.9.9
+15 verbose afterAdd /Users/liming/.npm/cordova-plugin-admob/2.9.9/package/package.json not in flight; writing
+16 verbose afterAdd /Users/liming/.npm/cordova-plugin-admob/2.9.9/package/package.json written
+17 silly publish { name: 'cordova-plugin-admob',
+17 silly publish   version: '2.9.9',
+17 silly publish   description: 'Cordova Plugin for Google AdMob and DFP Ads',
+17 silly publish   cordova:
+17 silly publish    { id: 'cordova-plugin-admob',
+17 silly publish      platforms: [ 'android', 'ios', 'amazon-fireos', 'wp8', 'windows' ] },
+17 silly publish   repository:
+17 silly publish    { type: 'git',
+17 silly publish      url: 'git+https://github.com/floatinghotpot/cordova-admob-pro.git' },
+17 silly publish   bugs: { url: 'https://github.com/floatinghotpot/cordova-admob-pro/issues' },
+17 silly publish   keywords: [ 'cordova', 'ecosystem:cordova', 'ad', 'admob', 'google', 'rjfun' ],
+17 silly publish   author: { name: 'Liming Xie' },
+17 silly publish   license: 'MIT',
+17 silly publish   readme: '## AdMob Plugin Pro \n\nCordova / PhoneGap Plugin for Google Ads, including AdMob / DFP (doubleclick for publisher) and mediations to other Ad networks.\n\n## Contents\n\n1. [Description](#description)\n2. [History](#history)\n3. [Features](#features)\n4. [Demo](#quick-demo)\n5. [Quick Start](#quick-start)\n6. [Installation](#installation)\n7. [Usage](#usage)\n8. [API](#api)\n9. [Wiki and Docs](#wiki-and-docs)\n10. [Important Tips](#tips)\n11. [Video Tutorial](#video-tutorial)\n12. [Screenshots](#screenshots)\n13. [Credits](#credits)\n\n## Description\n\nThis Cordova / PhoneGap plugin enables displaying mobile Ads with single line of javascript code. Designed for the use in HTML5-based cross-platform hybrid games and other applications.\n\n## History\n\nCommunity-driven project. Designed and maintained by [Raymond Xie](http://github.com/floatinghotpot/) since August 2014. It also features integration in AngularJS projects via [ngCordova] (http://www.ngcordova.com).\n\nIt was published to Cordova registry with id "com.google.cordova.admob" since Aug 2014, and  has been downloaded more than 120,000 times. Now it\'s the No. 1 monetization plugin for Cordova community.\n\n![ScreenShot](https://github.com/floatinghotpot/cordova-admob-pro/raw/master/docs/trend.png)\n\nFrom May 2015, Cordova team announced the deprecation of Cordova registry, and suggest all plugins to be moved to npm repository. Now, the AdMob plugin is published to npm and renamed as "cordova-plugin-admobpro".\n\n## Features\n\nPlatforms supported:\n- [x] Android, via SDK v7.8 (part of Google Play service platform)\n- [x] iOS, via SDK v7.5.0\n- [x] Windows Phone, via SDK v6.5.13\n- [x] Amazon-FireOS, via Android SDK (part of Google Play service platform)\n\nAd Types:\n- [x] Banner\n- [x] Interstitial (text, picture, video)\n- [x] IAP Ad\n- [x] Native Ad (Google new product, on roadmap)\n\nMediation to other Ad networks:\n* [x] AdMob (built-in)\n* [x] DFP (DoubleClick for Publisher, built-in)\n* [x] Facebook Audience Network\n* [x] Flurry\n* [x] iAd\n* [x] InMobi\n* [x] Millennial Media\n* [x] MobFox\n\n## Quick Demo\n\nWanna quickly see the mobile ad on your simulator or device? Try the following commands.\n\n```bash\n    # install cordova CLI\n    [sudo] npm install cordova -g\n\n    # install a small utility to run all the commands for you\n    [sudo] npm install plugin-verify -g\n\n    # Demo 1: run admob demo with sample index.html\n    plugin-verify cordova-plugin-admobpro\n\n    # Demo 2/3: run admob demo in game powered by PIXI/phaser HTML5 engine\n    plugin-verify admob-demo-game-pixi ios --landscape\n    plugin-verify admob-demo-game-phaser ios --landscape\n\n    # Demo 4: run admob demo in app powered by ionic/angular framework\n    plugin-verify admob-demo-app-ionic ios --portrait\n```\n\n## Quick start\n```bash\n\t# create a demo project\n    cordova create test1 com.rjfun.test1 Test1\n    cd test1\n    cordova platform add android\n    cordova platform add ios\n\n    # now add the plugin, cordova CLI will handle dependency automatically\n    cordova plugin add cordova-plugin-admobpro\n\n    # now remove the default www content, copy the demo html file to www\n    rm -r www/*;\n    cp plugins/cordova-plugin-admobpro/test/* www/;\n\n\t# now build and run the demo in your device or emulator\n    cordova prepare; \n    cordova run android; \n    cordova run ios;\n    # or import into Xcode / eclipse\n```\n\n## Installation\n\n* If use with Cordova CLI:\n```bash\ncordova plugin add cordova-plugin-admobpro\n```\n\nIf use other tools or online build services, see:\n* [x] Apache Cordova CLI, v3.0+ ([How To ...](https://github.com/floatinghotpot/cordova-admob-pro/wiki/01.-How-to-Use-with-Cordova-CLI))\n* [x] Intel XDK, r1095+ ([How To ...](https://github.com/floatinghotpot/cordova-admob-pro/wiki/02.-How-to-Use-with-Intel-XDK))\n* [x] IBM Worklight, v6.2+ ([How To ...](https://github.com/floatinghotpot/cordova-admob-pro/wiki/04.-How-to-Use-with-IBM-Worklight))\n* [x] Google Mobile Chrome App ([How To ...](https://github.com/floatinghotpot/cordova-admob-pro/wiki/05.-How-to-Use-with-Mobile-Chrome-App))\n* [x] Adobe PhoneGap Build. ([How To ...](https://github.com/floatinghotpot/cordova-admob-pro/wiki/00.-How-To-Use-with-PhoneGap-Build))\n* [x] Meteor ([How To ...](https://github.com/floatinghotpot/cordova-admob-pro/wiki/06.-How-To-Use-with-Meteor))\n* [x] Ionic/AngularJS ([In ng-cordova ...](https://github.com/driftyco/ng-cordova/blob/master/src/plugins/googleAds.js))\n\nWhat\'s difference of the 3 plugin IDs, which one shall I use ?\n* com.google.cordova.admob\n* cordova-plugin-admobpro\n* cordova-plugin-admob\n\nRead: [Difference of Plugin ID](https://github.com/floatinghotpot/cordova-admob-pro/wiki/Difference-of-Plugin-IDs)\n\nNotice:\n* If build locally using ```cordova-plugin-admobpro```, to avoid build error, you need install some extras in Android SDK manager (type ```android sdk``` to launch it):\n![android extra](https://cloud.githubusercontent.com/assets/2339512/8176143/20533ec0-1429-11e5-8e17-a748373d5110.png)\n\n## Usage\n\nShow Mobile Ad with single line of javascript code.\n\nStep 1: Create Ad Unit Id for your banner and interstitial, in [AdMob portal](http://www.admob.com/), then write it in your javascript code.\n\n```javascript\n// select the right Ad Id according to platform\n    var admobid = {};\n    if( /(android)/i.test(navigator.userAgent) ) { // for android & amazon-fireos\n\t\tadmobid = {\n\t\t\tbanner: \'ca-app-pub-xxx/xxx\', // or DFP format "/6253334/dfp_example_ad"\n\t\t\tinterstitial: \'ca-app-pub-xxx/yyy\'\n        };\n    } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) { // for ios\n\t\tadmobid = {\n\t\t\tbanner: \'ca-app-pub-xxx/zzz\', // or DFP format "/6253334/dfp_example_ad"\n\t\t\tinterstitial: \'ca-app-pub-xxx/kkk\'\n\t\t};\n    } else { // for windows phone\n\t\tadmobid = {\n\t\t\tbanner: \'ca-app-pub-xxx/zzz\', // or DFP format "/6253334/dfp_example_ad"\n\t\t\tinterstitial: \'ca-app-pub-xxx/kkk\'\n\t\t};\n    }\n```\n\nStep 2: Want cheap and basic banner? single line of javascript code.\n\n```javascript\n// it will display smart banner at top center, using the default options\nif(AdMob) AdMob.createBanner( {\n\tadId: admobid.banner, \n\tposition: AdMob.AD_POSITION.TOP_CENTER, \n\tautoShow: true } );\n```\n\nStep 3: Want interstitial Ad to earn more money ? Easy, 2 lines of code. \n\n```javascript\n// preppare and load ad resource in background, e.g. at begining of game level\nif(AdMob) AdMob.prepareInterstitial( {adId:admobid.interstitial, autoShow:false} );\n\n// show the interstitial later, e.g. at end of game level\nif(AdMob) AdMob.showInterstitial();\n```\n\nOr, you can just copy this [admob_simple.js](https://github.com/floatinghotpot/cordova-admob-pro/blob/master/test/admob_simple.js) to your project, and ref in your index.html.\n\n## AdMob Mediation Adapters ##\n\nOptional mediations to increase your revenue (Read about [AdMob Mediation Networks](https://developers.google.com/mobile-ads-sdk/docs/admob/android/mediation-networks)):\n```bash\ncordova plugin add cordova-plugin-admob-facebook\ncordova plugin add cordova-plugin-admob-flurry\ncordova plugin add cordova-plugin-admob-iad\ncordova plugin add cordova-plugin-admob-inmobi\ncordova plugin add cordova-plugin-admob-mmedia\ncordova plugin add cordova-plugin-admob-mobfox\n```\n\nNotice: If you want to add multiple mediations, please balance flexibility and binary size.\n\n## API\n\nMethods:\n```javascript\n// use banner\ncreateBanner(adId/options, success, fail);\nremoveBanner();\nshowBanner(position);\nshowBannerAtXY(x, y);\nhideBanner();\n\n// use interstitial\nprepareInterstitial(adId/options, success, fail);\nshowInterstitial();\n\n// set default value for other methods\nsetOptions(options, success, fail);\n```\n\nEvents:\n```javascript\n// onAdLoaded\n// onAdFailLoad\n// onAdPresent\n// onAdDismiss\n// onAdLeaveApp\ndocument.addEventListener(\'onAdFailLoad\', function(e){\n    // handle the event\n});\n```\n\n## Wiki and Docs\n\nQuick start, simply copy & paste:\n* [Example Code](https://github.com/floatinghotpot/cordova-admob-pro/wiki/1.0-Quick-Start-Example-Code)\n* [Complete Demo index.html](https://github.com/floatinghotpot/cordova-admob-pro/blob/master/test/index.html)\n\nAPI Reference:\n* [API Overview](https://github.com/floatinghotpot/cordova-admob-pro/wiki/1.1-API-Overview)\n* [How to Use Banner](https://github.com/floatinghotpot/cordova-admob-pro/wiki/1.3-Methods-for-Banner)\n* [How to Use Interstitial](https://github.com/floatinghotpot/cordova-admob-pro/wiki/1.4-Methods-for-Interstitial)\n* [How to Handle Ad Events](https://github.com/floatinghotpot/cordova-admob-pro/wiki/1.5-Events)\n* [Chinese/中文文档](https://github.com/floatinghotpot/cordova-admob-pro/wiki/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3)\n\nOther Documentations:\n* [ChangeLog](https://github.com/floatinghotpot/cordova-admob-pro/wiki/ChangeLog)\n* [FAQ](https://github.com/floatinghotpot/cordova-admob-pro/wiki/FAQ)\n* [Notice for Android Proguard](https://github.com/floatinghotpot/cordova-admob-pro/wiki/Notice-for-Android-Proguard)\n\nDemo projects:\n* [App demo using Ionic framework](https://github.com/floatinghotpot/admob-demo-app-ionic/tree/master/demo)\n* [Game demo using phaser game engine](https://github.com/floatinghotpot/admob-demo-game-phaser/tree/master/demo)\n* [Game demo using PIXI game engine](https://github.com/floatinghotpot/admob-demo-game-pixi/tree/master/demo)\n\n## Tips\n\nSome important tips, FYI.\n\n- [x] Strongly recommend Interstitial, more than 10 times profit than banner Ad. \n\nAd Format | Banner | Interstitial\n---|-------|--------------\nClick Rate | < 1% | 3-15%\nRPM (revenue per 1000 impression) |  US$ 0.5~4 | US$ 10~100\n\n- [x] RPM top countries (stat data in recent 2 months, FYI):\n![ScreenShot](https://github.com/floatinghotpot/cordova-admob-pro/raw/master/docs/stat_ref.png)\n\n- [x] Using SMART_BANNER to auto-fit the screen width, avoid using BANNER or FULL_BANNER (unless you are using DFP)\n\n- [x] Why Chooese Google AdMob ?\n\nAdvertisement is main business and income source of Google, so the clients are all around the world. Google is one of the most realable partners for its high quality service.\n\n* High fill rate, nearly 100% all around world.\n* High quality Ad, bring high RPM.\n* Stable price, auto pay on time. Pay on every 20th next month.\n\n## Video Tutorial\n\n* Using Cordova CLI to Add AdMob Plugin:\n\n[![Video](https://github.com/floatinghotpot/cordova-admob-pro/raw/master/docs/youtube_video0.jpg)](http://youtu.be/dBCRW_swoYU)\n\n* Run AdMob Demo App on Android:\n\n[![Video](https://github.com/floatinghotpot/cordova-admob-pro/raw/master/docs/youtube_video.jpg)](http://youtu.be/GsBI97WjFQo)\n\n## Screenshots\n\niPhone Banner | iPhone Interstitial\n-------|---------------\n![ScreenShot](https://github.com/floatinghotpot/cordova-admob-pro/raw/master/docs/iphone.jpg) | ![ScreenShot](https://github.com/floatinghotpot/cordova-admob-pro/raw/master/docs/iphone_interstitial.jpg)\nAndroid Banner | Android Interstitial\n![ScreenShot](https://github.com/floatinghotpot/cordova-admob-pro/raw/master/docs/android.jpg) | ![ScreenShot](https://github.com/floatinghotpot/cordova-admob-pro/raw/master/docs/android_interstitial.jpg)\n\n## Credits\n\nThis project is created and maintained by Raymond Xie.\n\nMore Cordova/PhoneGap plugins by Raymond Xie, [find them in plugin registry](http://plugins.cordova.io/#/search?search=rjfun), or [find them in npm](https://www.npmjs.com/~floatinghotpot).\n\nIf use in commercial project and need email/skype support, please [get a license](http://rjfun.github.io/), you will be supported with high priority.\n\nProject outsourcing and consulting service is also available. Please [contact us](mailto:rjfun.mobile@gmail.com) if you have the business needs.\n\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: '6429c21b27bf3abbfe3962bc8bcb41c627a07023',
+17 silly publish   homepage: 'https://github.com/floatinghotpot/cordova-admob-pro#readme',
+17 silly publish   _id: 'cordova-plugin-admob@2.9.9',
+17 silly publish   scripts: {},
+17 silly publish   _shasum: 'b70af53801fcc206da4376a3e24eac9f86224474',
+17 silly publish   _from: '.' }
+18 verbose getPublishConfig undefined
+19 silly mapToRegistry name cordova-plugin-admob
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/cordova-plugin-admob
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading /Users/liming/.npm/cordova-plugin-admob/2.9.9/package.tgz
+25 verbose request uri https://registry.npmjs.org/cordova-plugin-admob
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 12:24:46
+28 verbose request using bearer token for auth
+29 verbose request id 0e76ee8073641863
+30 http request PUT https://registry.npmjs.org/cordova-plugin-admob
+31 http 403 https://registry.npmjs.org/cordova-plugin-admob
+32 verbose headers { 'content-type': 'application/json',
+32 verbose headers   'cache-control': 'max-age=300',
+32 verbose headers   'content-length': '95',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Mon, 14 Dec 2015 04:25:35 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-nrt6121-NRT',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1450067087.405598,VS0,VE48345' }
+33 verbose request invalidating /Users/liming/.npm/registry.npmjs.org/cordova-plugin-admob on PUT
+34 error publish Failed PUT 403
+35 verbose stack Error: "You cannot publish over the previously published version 2.9.9." : cordova-plugin-admob
+35 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+35 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+35 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+35 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:198:22)
+35 verbose stack     at emitTwo (events.js:87:13)
+35 verbose stack     at Request.emit (events.js:172:7)
+35 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1063:14)
+35 verbose stack     at emitOne (events.js:82:20)
+35 verbose stack     at Request.emit (events.js:169:7)
+35 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1009:12)
+36 verbose statusCode 403
+37 verbose pkgid cordova-plugin-admob
+38 verbose cwd /Users/liming/workspace/cordova-plugins/admobpro
+39 error Darwin 14.5.0
+40 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish" "."
+41 error node v4.2.1
+42 error npm  v2.14.7
+43 error code E403
+44 error "You cannot publish over the previously published version 2.9.9." : cordova-plugin-admob
+45 error If you need help, you may report this error at:
+45 error     <https://github.com/npm/npm/issues>
+46 verbose exit [ 1, true ]
