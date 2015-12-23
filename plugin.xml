@@ -72,8 +72,8 @@
         <source-file src="src/android/AdMobPlugin.java" target-dir="src/com/rjfun/cordova/admob" />
 
         <!-- amazon-fireos still using ant, AND default android r19 -->
-        <!-- framework src="com.google.android.gms:play-services-ads:+" /-->
-        <dependency id="cordova-plugin-googleplayservices"/>
+        <framework src="com.google.android.gms:play-services-ads:+"/>
+        <!-- <dependency id="cordova-plugin-googleplayservices"/> -->
      </platform>
 
      <!-- ios -->
